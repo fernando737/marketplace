@@ -1,1 +1,20 @@
-{ image: gitpod/workspace-full }
+image:
+  file: .gitpod.Dockerfile
+
+# List the ports you want to expose and what to do when they are served. See https://www.gitpod.io/docs/43_config_ports/
+ports:
+  - port: 8080
+    onOpen: open-preview
+
+# List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/44_config_start_tasks/
+tasks:
+  - init: >
+      python3 -m pip install -r requirements.txt &&
+      python3 manage.py migrate
+    command: >
+      python3 manage.py runserver 0.0.0.0:8080
+
+github:
+    prebuilds:
+        pullRequestsFromForks: true
+
