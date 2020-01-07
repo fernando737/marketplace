@@ -10,7 +10,7 @@ ports:
 tasks:
   - init: >
       python3 -m pip install -r myshop/requirements.txt &&
-      python3 manage.py migrate
+      python3 myshop/manage.py migrate
     command: >
       daphne -b localhost -p 8080 myshop/myshop.asgi:application
       
