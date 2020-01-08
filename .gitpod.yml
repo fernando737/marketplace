@@ -9,10 +9,11 @@ ports:
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/44_config_start_tasks/
 tasks:
   - init: >
-      python3 -m pip install -r myshop/requirements.txt &&
-      python3 myshop/manage.py migrate
+      cd myshop
+      python3 -m pip install -r requirements.txt &&
+      python3 manage.py migrate
     command: >
-      daphne -b localhost -p 8080 myshop/myshop.asgi:application
+      daphne -b localhost -p 8080 myshop.asgi:application
       
 
 github:
