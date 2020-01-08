@@ -9,7 +9,7 @@ ports:
 # List the start up tasks. You can start them in parallel in multiple terminals. See https://www.gitpod.io/docs/44_config_start_tasks/
 tasks:
   - init: >
-      cd myshop
+      cd myshop &&
       python3 -m pip install -r requirements.txt &&
       python3 manage.py migrate
     command: >
