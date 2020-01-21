@@ -13,7 +13,7 @@ tasks:
       python3 -m pip install -r requirements.txt &&
       python3 manage.py migrate
     command: >
-      daphne -b localhost -p 8080 myshop.asgi:application
+      python3 manage.py runserver localhost:8080
       
 
 github:
